@@ -1,0 +1,322 @@
+"use strict";
+(self["webpackChunkmap3B2ADDF877D2469E9BFCA64A755281EF_DEBUG"] = self["webpackChunkmap3B2ADDF877D2469E9BFCA64A755281EF_DEBUG"] || []).push([[822],{
+
+/***/ 59057:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* unused harmony export defaultUboDeclaration */
+/* harmony import */ var _Engines_shaderStore_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(69610);
+/* harmony import */ var _sceneUboDeclaration_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(28764);
+/* harmony import */ var _meshUboDeclaration_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(96467);
+// Do not edit.
+
+
+
+const name = "defaultUboDeclaration";
+const shader = `layout(std140,column_major) uniform;uniform Material
+{vec4 diffuseLeftColor;vec4 diffuseRightColor;vec4 opacityParts;vec4 reflectionLeftColor;vec4 reflectionRightColor;vec4 refractionLeftColor;vec4 refractionRightColor;vec4 emissiveLeftColor;vec4 emissiveRightColor;vec2 vDiffuseInfos;vec2 vAmbientInfos;vec2 vOpacityInfos;vec2 vReflectionInfos;vec3 vReflectionPosition;vec3 vReflectionSize;vec2 vEmissiveInfos;vec2 vLightmapInfos;vec2 vSpecularInfos;vec3 vBumpInfos;mat4 diffuseMatrix;mat4 ambientMatrix;mat4 opacityMatrix;mat4 reflectionMatrix;mat4 emissiveMatrix;mat4 lightmapMatrix;mat4 specularMatrix;mat4 bumpMatrix;vec2 vTangentSpaceParams;float pointSize;float alphaCutOff;mat4 refractionMatrix;vec4 vRefractionInfos;vec3 vRefractionPosition;vec3 vRefractionSize;vec4 vSpecularColor;vec3 vEmissiveColor;vec4 vDiffuseColor;vec3 vAmbientColor;
+#define ADDITIONAL_UBO_DECLARATION
+};
+#include<sceneUboDeclaration>
+#include<meshUboDeclaration>
+`;
+// Sideeffect
+_Engines_shaderStore_js__WEBPACK_IMPORTED_MODULE_0__/* .ShaderStore */ .l.IncludesShadersStore[name] = shader;
+/** @internal */
+const defaultUboDeclaration = { name, shader };
+//# sourceMappingURL=defaultUboDeclaration.js.map
+
+/***/ }),
+
+/***/ 67139:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* unused harmony export defaultVertexDeclaration */
+/* harmony import */ var _Engines_shaderStore_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(69610);
+/* harmony import */ var _decalVertexDeclaration_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(96019);
+// Do not edit.
+
+
+const name = "defaultVertexDeclaration";
+const shader = `uniform mat4 viewProjection;uniform mat4 view;
+#ifdef DIFFUSE
+uniform mat4 diffuseMatrix;uniform vec2 vDiffuseInfos;
+#endif
+#ifdef AMBIENT
+uniform mat4 ambientMatrix;uniform vec2 vAmbientInfos;
+#endif
+#ifdef OPACITY
+uniform mat4 opacityMatrix;uniform vec2 vOpacityInfos;
+#endif
+#ifdef EMISSIVE
+uniform vec2 vEmissiveInfos;uniform mat4 emissiveMatrix;
+#endif
+#ifdef LIGHTMAP
+uniform vec2 vLightmapInfos;uniform mat4 lightmapMatrix;
+#endif
+#if defined(SPECULAR) && defined(SPECULARTERM)
+uniform vec2 vSpecularInfos;uniform mat4 specularMatrix;
+#endif
+#ifdef BUMP
+uniform vec3 vBumpInfos;uniform mat4 bumpMatrix;
+#endif
+#ifdef REFLECTION
+uniform mat4 reflectionMatrix;
+#endif
+#ifdef POINTSIZE
+uniform float pointSize;
+#endif
+#ifdef DETAIL
+uniform vec4 vDetailInfos;uniform mat4 detailMatrix;
+#endif
+#include<decalVertexDeclaration>
+#define ADDITIONAL_VERTEX_DECLARATION
+`;
+// Sideeffect
+_Engines_shaderStore_js__WEBPACK_IMPORTED_MODULE_0__/* .ShaderStore */ .l.IncludesShadersStore[name] = shader;
+/** @internal */
+const defaultVertexDeclaration = { name, shader };
+//# sourceMappingURL=defaultVertexDeclaration.js.map
+
+/***/ }),
+
+/***/ 91211:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* unused harmony export pointCloudVertex */
+/* harmony import */ var _Engines_shaderStore_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(69610);
+// Do not edit.
+
+const name = "pointCloudVertex";
+const shader = `#if defined(POINTSIZE) && !defined(WEBGPU)
+gl_PointSize=pointSize;
+#endif
+`;
+// Sideeffect
+_Engines_shaderStore_js__WEBPACK_IMPORTED_MODULE_0__/* .ShaderStore */ .l.IncludesShadersStore[name] = shader;
+/** @internal */
+const pointCloudVertex = { name, shader };
+//# sourceMappingURL=pointCloudVertex.js.map
+
+/***/ }),
+
+/***/ 48822:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   defaultVertexShader: () => (/* binding */ defaultVertexShader)
+/* harmony export */ });
+/* harmony import */ var _Engines_shaderStore_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(69610);
+/* harmony import */ var _ShadersInclude_defaultVertexDeclaration_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(67139);
+/* harmony import */ var _ShadersInclude_defaultUboDeclaration_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(59057);
+/* harmony import */ var _ShadersInclude_uvAttributeDeclaration_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(94381);
+/* harmony import */ var _ShadersInclude_helperFunctions_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(73325);
+/* harmony import */ var _ShadersInclude_bonesDeclaration_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(69707);
+/* harmony import */ var _ShadersInclude_bakedVertexAnimationDeclaration_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(18959);
+/* harmony import */ var _ShadersInclude_instancesDeclaration_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(1218);
+/* harmony import */ var _ShadersInclude_prePassVertexDeclaration_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(78328);
+/* harmony import */ var _ShadersInclude_mainUVVaryingDeclaration_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(4980);
+/* harmony import */ var _ShadersInclude_samplerVertexDeclaration_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(85136);
+/* harmony import */ var _ShadersInclude_bumpVertexDeclaration_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(56390);
+/* harmony import */ var _ShadersInclude_clipPlaneVertexDeclaration_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(71636);
+/* harmony import */ var _ShadersInclude_fogVertexDeclaration_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(86560);
+/* harmony import */ var _ShadersInclude_lightVxFragmentDeclaration_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(47059);
+/* harmony import */ var _ShadersInclude_lightVxUboDeclaration_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(4662);
+/* harmony import */ var _ShadersInclude_morphTargetsVertexGlobalDeclaration_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(27999);
+/* harmony import */ var _ShadersInclude_morphTargetsVertexDeclaration_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(90738);
+/* harmony import */ var _ShadersInclude_logDepthDeclaration_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(34581);
+/* harmony import */ var _ShadersInclude_morphTargetsVertexGlobal_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(48451);
+/* harmony import */ var _ShadersInclude_morphTargetsVertex_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(15060);
+/* harmony import */ var _ShadersInclude_instancesVertex_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(3298);
+/* harmony import */ var _ShadersInclude_bonesVertex_js__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(3361);
+/* harmony import */ var _ShadersInclude_bakedVertexAnimation_js__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(65523);
+/* harmony import */ var _ShadersInclude_prePassVertex_js__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(65438);
+/* harmony import */ var _ShadersInclude_uvVariableDeclaration_js__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(4981);
+/* harmony import */ var _ShadersInclude_samplerVertexImplementation_js__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(41316);
+/* harmony import */ var _ShadersInclude_bumpVertex_js__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(19440);
+/* harmony import */ var _ShadersInclude_clipPlaneVertex_js__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(47314);
+/* harmony import */ var _ShadersInclude_fogVertex_js__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(16470);
+/* harmony import */ var _ShadersInclude_shadowsVertex_js__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(35687);
+/* harmony import */ var _ShadersInclude_vertexColorMixing_js__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(16864);
+/* harmony import */ var _ShadersInclude_pointCloudVertex_js__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(91211);
+/* harmony import */ var _ShadersInclude_logDepthVertex_js__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(2215);
+// Do not edit.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const name = "defaultVertexShader";
+const shader = `#include<__decl__defaultVertex>
+#define CUSTOM_VERTEX_BEGIN
+attribute vec3 position;
+#ifdef NORMAL
+attribute vec3 normal;
+#endif
+#ifdef TANGENT
+attribute vec4 tangent;
+#endif
+#ifdef UV1
+attribute vec2 uv;
+#endif
+#include<uvAttributeDeclaration>[2..7]
+#ifdef VERTEXCOLOR
+attribute vec4 color;
+#endif
+#include<helperFunctions>
+#include<bonesDeclaration>
+#include<bakedVertexAnimationDeclaration>
+#include<instancesDeclaration>
+#include<prePassVertexDeclaration>
+#include<mainUVVaryingDeclaration>[1..7]
+#include<samplerVertexDeclaration>(_DEFINENAME_,DIFFUSE,_VARYINGNAME_,Diffuse)
+#include<samplerVertexDeclaration>(_DEFINENAME_,DETAIL,_VARYINGNAME_,Detail)
+#include<samplerVertexDeclaration>(_DEFINENAME_,AMBIENT,_VARYINGNAME_,Ambient)
+#include<samplerVertexDeclaration>(_DEFINENAME_,OPACITY,_VARYINGNAME_,Opacity)
+#include<samplerVertexDeclaration>(_DEFINENAME_,EMISSIVE,_VARYINGNAME_,Emissive)
+#include<samplerVertexDeclaration>(_DEFINENAME_,LIGHTMAP,_VARYINGNAME_,Lightmap)
+#if defined(SPECULARTERM)
+#include<samplerVertexDeclaration>(_DEFINENAME_,SPECULAR,_VARYINGNAME_,Specular)
+#endif
+#include<samplerVertexDeclaration>(_DEFINENAME_,BUMP,_VARYINGNAME_,Bump)
+#include<samplerVertexDeclaration>(_DEFINENAME_,DECAL,_VARYINGNAME_,Decal)
+varying vec3 vPositionW;
+#ifdef NORMAL
+varying vec3 vNormalW;
+#endif
+#if defined(VERTEXCOLOR) || defined(INSTANCESCOLOR) && defined(INSTANCES)
+varying vec4 vColor;
+#endif
+#include<bumpVertexDeclaration>
+#include<clipPlaneVertexDeclaration>
+#include<fogVertexDeclaration>
+#include<__decl__lightVxFragment>[0..maxSimultaneousLights]
+#include<morphTargetsVertexGlobalDeclaration>
+#include<morphTargetsVertexDeclaration>[0..maxSimultaneousMorphTargets]
+#ifdef REFLECTIONMAP_SKYBOX
+varying vec3 vPositionUVW;
+#endif
+#if defined(REFLECTIONMAP_EQUIRECTANGULAR_FIXED) || defined(REFLECTIONMAP_MIRROREDEQUIRECTANGULAR_FIXED)
+varying vec3 vDirectionW;
+#endif
+#include<logDepthDeclaration>
+#define CUSTOM_VERTEX_DEFINITIONS
+void main(void) {
+#define CUSTOM_VERTEX_MAIN_BEGIN
+vec3 positionUpdated=position;
+#ifdef NORMAL
+vec3 normalUpdated=normal;
+#endif
+#ifdef TANGENT
+vec4 tangentUpdated=tangent;
+#endif
+#ifdef UV1
+vec2 uvUpdated=uv;
+#endif
+#include<morphTargetsVertexGlobal>
+#include<morphTargetsVertex>[0..maxSimultaneousMorphTargets]
+#ifdef REFLECTIONMAP_SKYBOX
+vPositionUVW=positionUpdated;
+#endif
+#define CUSTOM_VERTEX_UPDATE_POSITION
+#define CUSTOM_VERTEX_UPDATE_NORMAL
+#include<instancesVertex>
+#if defined(PREPASS) && \
+(defined(PREPASS_VELOCITY) && !defined(BONES_VELOCITY_ENABLED) || \
+defined(PREPASS_VELOCITY_LINEAR))
+vCurrentPosition =
+viewProjection*finalWorld*vec4(positionUpdated,1.0);vPreviousPosition=previousViewProjection*finalPreviousWorld *
+vec4(positionUpdated,1.0);
+#endif
+#include<bonesVertex>
+#include<bakedVertexAnimation>
+vec4 worldPos=finalWorld*vec4(positionUpdated,1.0);
+#ifdef NORMAL
+mat3 normalWorld=mat3(finalWorld);
+#if defined(INSTANCES) && defined(THIN_INSTANCES)
+vNormalW=normalUpdated/vec3(dot(normalWorld[0],normalWorld[0]),dot(normalWorld[1],normalWorld[1]),dot(normalWorld[2],normalWorld[2]));vNormalW=normalize(normalWorld*vNormalW);
+#else
+#ifdef NONUNIFORMSCALING
+normalWorld=transposeMat3(inverseMat3(normalWorld));
+#endif
+vNormalW=normalize(normalWorld*normalUpdated);
+#endif
+#endif
+#define CUSTOM_VERTEX_UPDATE_WORLDPOS
+#ifdef MULTIVIEW
+if (gl_ViewID_OVR==0u) {gl_Position=viewProjection*worldPos;} else {gl_Position=viewProjectionR*worldPos;}
+#else
+gl_Position=viewProjection*worldPos;
+#endif
+vPositionW=vec3(worldPos);
+#include<prePassVertex>
+#if defined(REFLECTIONMAP_EQUIRECTANGULAR_FIXED) || defined(REFLECTIONMAP_MIRROREDEQUIRECTANGULAR_FIXED)
+vDirectionW=normalize(vec3(finalWorld*vec4(positionUpdated,0.0)));
+#endif
+#ifndef UV1
+vec2 uvUpdated=vec2(0.,0.);
+#endif
+#ifdef MAINUV1
+vMainUV1=uvUpdated;
+#endif
+#include<uvVariableDeclaration>[2..7]
+#include<samplerVertexImplementation>(_DEFINENAME_,DIFFUSE,_VARYINGNAME_,Diffuse,_MATRIXNAME_,diffuse,_INFONAME_,DiffuseInfos.x)
+#include<samplerVertexImplementation>(_DEFINENAME_,DETAIL,_VARYINGNAME_,Detail,_MATRIXNAME_,detail,_INFONAME_,DetailInfos.x)
+#include<samplerVertexImplementation>(_DEFINENAME_,AMBIENT,_VARYINGNAME_,Ambient,_MATRIXNAME_,ambient,_INFONAME_,AmbientInfos.x)
+#include<samplerVertexImplementation>(_DEFINENAME_,OPACITY,_VARYINGNAME_,Opacity,_MATRIXNAME_,opacity,_INFONAME_,OpacityInfos.x)
+#include<samplerVertexImplementation>(_DEFINENAME_,EMISSIVE,_VARYINGNAME_,Emissive,_MATRIXNAME_,emissive,_INFONAME_,EmissiveInfos.x)
+#include<samplerVertexImplementation>(_DEFINENAME_,LIGHTMAP,_VARYINGNAME_,Lightmap,_MATRIXNAME_,lightmap,_INFONAME_,LightmapInfos.x)
+#if defined(SPECULARTERM)
+#include<samplerVertexImplementation>(_DEFINENAME_,SPECULAR,_VARYINGNAME_,Specular,_MATRIXNAME_,specular,_INFONAME_,SpecularInfos.x)
+#endif
+#include<samplerVertexImplementation>(_DEFINENAME_,BUMP,_VARYINGNAME_,Bump,_MATRIXNAME_,bump,_INFONAME_,BumpInfos.x)
+#include<samplerVertexImplementation>(_DEFINENAME_,DECAL,_VARYINGNAME_,Decal,_MATRIXNAME_,decal,_INFONAME_,DecalInfos.x)
+#include<bumpVertex>
+#include<clipPlaneVertex>
+#include<fogVertex>
+#include<shadowsVertex>[0..maxSimultaneousLights]
+#include<vertexColorMixing>
+#include<pointCloudVertex>
+#include<logDepthVertex>
+#define CUSTOM_VERTEX_MAIN_END
+}
+`;
+// Sideeffect
+_Engines_shaderStore_js__WEBPACK_IMPORTED_MODULE_0__/* .ShaderStore */ .l.ShadersStore[name] = shader;
+/** @internal */
+const defaultVertexShader = { name, shader };
+//# sourceMappingURL=default.vertex.js.map
+
+/***/ })
+
+}]);
