@@ -1,0 +1,1 @@
+{"version":3,"file":"visual.css","mappings":"AAEA;EACI;EACA;EACA;AADJ;AAKA;EACI;EACA;EACA;AAHJ","sources":["webpack:///./style/visual.less"],"sourcesContent":["\n\n.visual {\n    position: relative;\n    width: 100%;\n    height: 100%;\n}\n\n\n:host {\n    display: block;\n    width: 100%;\n    height: 100vh;\n}\n"],"names":[],"sourceRoot":""}

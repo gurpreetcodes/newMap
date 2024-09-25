@@ -1,0 +1,34 @@
+{
+  "name": "visual",
+  "description": "default_template_value",
+  "version": "1.0.0.0",
+  "repository": {
+    "type": "default_template_value",
+    "url": "default_template_value"
+  },
+  "license": "MIT",
+  "scripts": {
+    "pbiviz": "pbiviz",
+    "start": "pbiviz start",
+    "package": "pbiviz package",
+    "lint": "npx eslint . --ext .js,.jsx,.ts,.tsx"
+  },
+  "dependencies": {
+    "@azure-rest/maps-search": "^2.0.0-beta.1",
+    "@types/d3": "7.4.0",
+    "azure-maps-control": "^3.3.0",
+    "d3": "^7.8.5",
+    "powerbi-visuals-api": "~5.3.0",
+    "powerbi-visuals-utils-formattingmodel": "6.0.0",
+    "three": "^0.168.0",
+    "three-gltf-loader": "^1.111.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.59.11",
+    "eslint": "^8.42.0",
+    "eslint-plugin-powerbi-visuals": "^0.8.1",
+    "less": "^4.2.0",
+    "less-loader": "^12.2.0",
+    "typescript": "4.9.3"
+  }
+}
